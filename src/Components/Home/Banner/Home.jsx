@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import TopSellingFood from "../TopSellingFood/TopSellingFood";
-import Maps from "./Map/Maps";
 import Location from "./Map/Location";
 
 
