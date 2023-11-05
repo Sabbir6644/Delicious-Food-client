@@ -1,8 +1,8 @@
 
 const Footer = () => {
      return (
-          <div>
-<footer className="footer pt-10 px-10 bg-base-300 text-base-content">
+          <div className="bg-base-300 ">
+<footer className="footer pt-10 px-10 max-w-7xl mx-auto text-base-content">
   <nav>
     <header className="footer-title">Services</header> 
     <a className="link link-hover">Branding</a> 
@@ -28,7 +28,7 @@ const Footer = () => {
 </footer>
 
 
-<footer className="footer footer-center p-4 bg-base-300 text-base-content">
+<footer className="footer footer-center p-4 max-w-7xl mx-auto text-base-content">
   <aside>
     <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
   </aside>
