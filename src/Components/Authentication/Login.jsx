@@ -6,6 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 
 import Swal from 'sweetalert2'
 import { AuthContext } from "./AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -87,6 +88,9 @@ const Login = () => {
      }
      return (
           <div className="flex min-h-screen items-center mx-auto">
+               <Helmet>
+                    <title>Delicious food | Login</title>
+               </Helmet>
                <div className=" w-11/12 md:w-[500px] mx-auto">
                     <div>
                          <h2 className="text-center text-5xl font-bold font-rancho text-red-900 mb-9">Please login</h2>

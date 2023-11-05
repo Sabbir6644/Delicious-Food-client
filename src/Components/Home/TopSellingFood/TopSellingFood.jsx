@@ -18,7 +18,7 @@ const TopSellingFood = () => {
                           adipisicing elit. Quisquam, deleniti.</p>
                           <p>Price: 100 tk</p>
                           {/* foodDetails */}
-                          <Link to={'foodDetails'}><button className="btn">Details</button></Link>
+                          <Link to={'/foodDetails'}><button className="btn">Details</button></Link>
 
                     </div>
                     {/* text div end */}

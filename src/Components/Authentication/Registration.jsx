@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 // import auth from "../../public/firebase.config";
 import { AuthContext } from "./AuthProvider";
 import auth from "../../../public/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -79,6 +80,9 @@ const Registration = () => {
      }
      return (
           <div className="flex mx-auto min-h-screen items-center">
+               <Helmet>
+                    <title>Delicious food | Registration</title>
+               </Helmet>
                <div className=" w-11/12 md:w-[500px] mx-auto">
                     <div>
                     <h2 className="text-center text-5xl font-bold font-rancho text-red-900 mb-9">Please Registration </h2>

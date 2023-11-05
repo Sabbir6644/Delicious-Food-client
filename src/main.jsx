@@ -15,17 +15,28 @@ import FoodPurchase from './Components/Pages/Foods/FoodPurchase';
 import Login from './Components/Authentication/Login';
 import PrivateRoute from './Components/Authentication/PrivateRoute';
 import Registration from './Components/Authentication/Registration';
+import MyAddedFood from './Components/Pages/Foods/MyAddedFood';
+import AddFood from './Components/Pages/Foods/AddFood';
+import MyOrderedFood from './Components/Pages/Foods/MyOrderedFood';
+import AllFoods from './Components/Pages/AllFoods/AllFoods';
+import Blog from './Components/Pages/Blogs/Blog';
+import ErrorPage from './Components/Pages/ErrorPage/ErrorPage';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>
       },
       {
-        path: "foodDetails",
+        path: "/allFoods",
+        element: <AllFoods></AllFoods>
+      },
+      {
+        path: "/foodDetails",
         element: <PrivateRoute><SingleFood></SingleFood></PrivateRoute>
       },
       {
@@ -39,6 +50,22 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration></Registration>
+      },
+      {
+        path: "/myAddedFood",
+        element: <MyAddedFood></MyAddedFood>
+      },
+      {
+        path: "/addFood",
+        element: <AddFood></AddFood>
+      },
+      {
+        path: "/orderedFood",
+        element: <MyOrderedFood></MyOrderedFood>
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
       },
     ]
   },
