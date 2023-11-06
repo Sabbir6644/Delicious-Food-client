@@ -3,6 +3,7 @@ import useAxios from "../../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import TopSellingCard from "./TopSellingCard";
 import { Link } from "react-router-dom";
+import MyListLoader from "../../Pages/Spiner/MyListLoader";
 
 
 const TopSellingFood = () => {
@@ -12,7 +13,7 @@ const TopSellingFood = () => {
           const res = await axios.get('/topSellingFood');
           return res;
      }
-     const { data, isFetching} = useQuery({
+     const { data, isFetching } = useQuery({
           queryKey: ['allFoodsCount'],
           queryFn: topSellingFood,
      });
@@ -24,15 +25,25 @@ const TopSellingFood = () => {
                </div>
                <div className="my-4">
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                    
                          {isFetching ? (
-                              <p>Loading...</p>
-                         ) : (
-                              data.data.map((topFood, index) => (
-                                   <TopSellingCard key={index} topFood={topFood}></TopSellingCard>
-                              ))
-                         )}
-                    </div>
+                              <div className='flex justify-center'>
+                                   <MyListLoader></MyListLoader>
+                              </div>
+
+
+                         ) : ( 
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                         
+                              {
+                                   data.data.map((topFood, index) => (
+                                        <TopSellingCard key={index} topFood={topFood}></TopSellingCard>
+                                   ))
+                              }
+                         
+                         </div>
+                        ) }
+                    
 
 
                     <div className="flex justify-center items-center my-5">

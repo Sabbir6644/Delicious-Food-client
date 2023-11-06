@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import useAxios from "../../../Hooks/useAxios";
 import AllFoodCard from "./AllFoodCard";
+import MyListLoader from "../Spiner/MyListLoader";
 
 
 const AllFoods = () => {
@@ -88,7 +89,9 @@ const AllFoods = () => {
                     {
                        
                               isLoading? (
-                                   <p>Loading...</p>
+                                   <div className='flex justify-center'>
+                                   <MyListLoader></MyListLoader>
+                              </div>
                               ): (
                                    <div className="grid grid-cols-2 gap-2">
                                    {foodCard?.map((food) => (
