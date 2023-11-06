@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AllFoodCard = ({food}) => {
      // console.log(food);
 
-const {description, food_category, food_image, food_name, food_origin, price, quantity, made_by}=food;
+const {_id,description, food_category, food_image, food_name, food_origin, price, quantity, made_by}=food;
 
      return (
           <div className="my-4">
@@ -25,7 +25,7 @@ const {description, food_category, food_image, food_name, food_origin, price, qu
                     </div> */}
                           
                           {/* foodPurchase */}
-                          <Link to={'/foodPurchase'}><button className="btn">Order</button></Link>
+                          <Link to={`/foodDetails/${_id}`}><button className="btn">Details</button></Link>
                           
                          
 

@@ -7,6 +7,7 @@ import AllFoodCard from "./AllFoodCard";
 
 const AllFoods = () => {
      const [foodCard, setFoodCard]= useState([]);
+     const [isLoading, setIsLoading]=useState(true)
      const axios = useAxios();
      // console.log(data.data);
      const allFoodsCount = async () => {
@@ -26,7 +27,7 @@ const AllFoods = () => {
           if (count?.data?.count) {
                setFoodItemCount(count.data.count);
           }
-     }, [count.data.count]);
+     }, [count?.data?.count]);
 
 
      // Search
@@ -53,12 +54,17 @@ const AllFoods = () => {
           }
      }
 
-
      useEffect(() => {
-         fetch(`https://assignment-11-server-jade.vercel.app/allFoods?page=${currentPage}&size=${foodCardPerPage}`)
-         .then(res=>res.json())
-         .then(data=>setFoodCard(data))
-     }, [currentPage]);
+          setIsLoading(true); 
+        
+          fetch(`https://assignment-11-server-jade.vercel.app/allFoods?page=${currentPage}&size=${foodCardPerPage}`)
+            .then((res) => res.json())
+            .then((data) => {
+              setFoodCard(data);
+              setIsLoading(false); 
+            });
+        }, [currentPage]);
+
      // Pagination
 
      return (
@@ -77,11 +83,15 @@ const AllFoods = () => {
 
                     {
                        
-                              <div className="grid grid-cols-2 gap-2">
+                              isLoading? (
+                                   <p>Loading...</p>
+                              ): (
+                                   <div className="grid grid-cols-2 gap-2">
                                    {foodCard?.map((food) => (
                                         <AllFoodCard key={food._id} food={food}></AllFoodCard>
                                    ))}
                               </div>
+                              )
                          
                     }
 

@@ -1,9 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Authentication/AuthProvider";
 
 
 const FoodPurchase = () => {
+     const food = useLoaderData();
+     const {food_name, price:prc}=food;
+     
+    const {user}=useContext(AuthContext);
+// console.log('user', user);
      // prevent previous date selection
      const getCurrentDate = () => {
           const today = new Date();
@@ -12,7 +19,7 @@ const FoodPurchase = () => {
           const day = String(today.getDate()).padStart(2, '0');
           return `${year}-${month}-${day}`;
      }
-     const unitPrice = 50;
+     const unitPrice =parseInt(prc);
      const [quantity, setQuantity] = useState(1);
      const [price, setPrice] = useState(unitPrice);
 
@@ -35,16 +42,14 @@ const FoodPurchase = () => {
      useEffect(() => {
           setPlaceholderPrice(price.toString());
      }, [price]);
-
+        
      const [placeholderPrice, setPlaceholderPrice] = useState(price.toString());
 
 
      const handlePurches = e => {
           e.preventDefault();
           const foodName = e.target.foodName ? e.target.foodName.value : '';
-          const quantity = e.target.quantity? e.target.quantity.value: '' ;
           const buyerName = e.target.buyerName? e.target.buyerName.value: '';
-          // const price = e.target.price.value;
           const buyerEmail = e.target.buyerEmail? e.target.buyerEmail.value: '';
           const buyingDate = e.target.buyingDate? e.target.buyingDate.value: '';
 
@@ -83,7 +88,7 @@ const FoodPurchase = () => {
 
                {/* Purches form */}
 
-               <div className="max-w-3xl mx-auto h-screen items-center flex justify-center ">
+               <div className="max-w-3xl mx-auto min-h-screen items-center flex justify-center ">
                     <div className="py-5">
                          <div className="text-center">
                               <h2 className="text-5xl font-bold text-center font-rancho">Food Purchase</h2>
@@ -95,7 +100,7 @@ const FoodPurchase = () => {
                                         <label className="label">
                                              <span className="label-text">Food Name</span>
                                         </label>
-                                        <input type="text" value={'food Name'} disabled placeholder="Food name" name="foodName" className=" rounded-md p-2 border w-full max-w-xs" />
+                                        <input type="text" value={food_name} disabled placeholder={food_name} name="foodName" className=" rounded-md p-2 border w-full max-w-xs" />
                                    </div>
                                    <div className="form-control w-full max-w-xs">
                                         <label className="label">
@@ -118,24 +123,24 @@ const FoodPurchase = () => {
                                         <label className="label">
                                              <span className="label-text"> Buyer Name</span>
                                         </label>
-                                        <input type="text" disabled defaultValue={'buyer name'} placeholder=" Buyer Name" name="buyerName" className="rounded-md p-2 border w-full max-w-xs" />
+                                        <input type="text" disabled value={user?.displayName} placeholder={user?.displayName} name="buyerName" className="rounded-md p-2 border w-full max-w-xs" />
                                    </div>
 
                                    <div className="form-control w-full max-w-xs">
                                         <label className="label">
                                              <span className="label-text">Buyer Email</span>
                                         </label>
-                                        <input type="text" disabled defaultValue={'buyer email'} placeholder="Buyer Email" name="buyerEmail" className="rounded-md p-2 border w-full max-w-xs" />
+                                        <input type="text" disabled value={user?.email} placeholder={user?.email} name="buyerEmail" className="rounded-md p-2 border w-full max-w-xs" />
                                    </div>
                               </div>
 
                               <div className="flex gap-5">
                                    <div className="form-control w-full max-w-xs">
                                         <label className="label">
-                                             <span className="label-text">Price</span>
+                                             <span className="label-text">Price (TK)</span>
                                         </label>
                                         <input
-                                             type="number"
+                                             type="text"
                                              disabled
                                              value={price}
                                              placeholder={placeholderPrice} // This placeholder value is updated in real-time
