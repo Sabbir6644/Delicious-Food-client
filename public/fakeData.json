@@ -1,0 +1,193 @@
+[
+     {
+       "food_name": "Pizza",
+       "food_image": "https://i.ibb.co/PZvDq0V/pizza.png",
+       "food_category": "Italian",
+       "quantity": 20,
+       "price": 599,
+       "made_by": "Young Lee",
+       "food_origin": "Italy",
+       "description": "Delicious pizza with tomato sauce, mozzarella cheese, and pepperoni."
+     },
+     {
+       "food_name": "Sushi",
+       "food_image": "https://i.ibb.co/MnpG5vB/susi.png",
+       "food_category": "Japanese",
+       "quantity": 38,
+       "price": 399,
+       "made_by": "Sam Lee",
+       "food_origin": "Japan",
+       "description": "Fresh sushi rolls with various fish and vegetables."
+     },
+     {
+       "food_name": "Burger",
+       "food_image": "https://i.ibb.co/Xpxxv6t/burger.png",
+       "food_category": "American",
+       "quantity": 55,
+       "price": 299,
+       "made_by": "Young Lee",
+       "food_origin": "USA",
+       "description": "Classic beef burger with lettuce, tomato, and special sauce."
+     },
+     {
+       "food_name": "Pad Thai",
+       "food_image": "https://i.ibb.co/D5qT6YF/pad-thai.png",
+       "food_category": "Thai",
+       "quantity": 40,
+       "price": 559,
+       "made_by": "San Jee",
+       "food_origin": "Thailand",
+       "description": "Spicy stir-fried noodles with shrimp, tofu, and peanuts."
+     },
+     {
+       "food_name": "Tacos",
+       "food_image": "https://i.ibb.co/2vNMfYL/tacos.png",
+       "food_category": "Mexican",
+       "quantity": 30,
+       "price": 899,
+       "made_by": "Bamm Jee",
+       "food_origin": "Mexico",
+       "description": "Tasty tacos with seasoned beef, salsa, and guacamole."
+     },
+     {
+       "food_name": "Pasta",
+       "food_image": "https://i.ibb.co/2qDLwnG/pasta.png",
+       "food_category": "Italian",
+       "quantity": 60,
+       "price": 999,
+       "made_by": "Young Joo",
+       "food_origin": "Italy",
+       "description": "Al dente pasta with creamy Alfredo sauce and garlic."
+     },
+     {
+       "food_name": "Curry",
+       "food_image": "https://i.ibb.co/n8qyzk5/curry.png",
+       "food_category": "Indian",
+       "quantity": 40,
+       "price": 1199,
+       "made_by": "Joon Yang",
+       "food_origin": "India",
+       "description": "Spicy chicken curry with rice and naan bread."
+     },
+     {
+       "food_name": "Salad",
+       "food_image": "https://i.ibb.co/b3hMkqN/salad.png",
+       "food_category": "Healthy",
+       "quantity": 57,
+       "price": 799,
+       "made_by": "Young Lee",
+       "food_origin": "Various",
+       "description": "Fresh garden salad with mixed greens, vegetables, and vinaigrette."
+     },
+     {
+       "food_name": "Steak",
+       "food_image": "https://i.ibb.co/NTSH7Nb/stack.png",
+       "food_category": "American",
+       "quantity": 52,
+       "price": 1999,
+       "made_by": "Young Lee",
+       "food_origin": "USA",
+       "description": "Juicy grilled steak with a side of mashed potatoes and asparagus."
+     },
+     {
+          "food_name": "Ramen",
+          "food_image": "https://i.ibb.co/vqMYNS9/ramen.png",
+          "food_category": "Japanese",
+          "quantity": 55,
+          "price": 1099,
+          "made_by": "Sam Jee",
+          "food_origin": "Japan",
+          "description": "Savory ramen noodles with broth, pork, and green onions."
+        },
+        {
+          "food_name": "Lasagna",
+          "food_image": "https://i.ibb.co/y5d5y3t/lasanga.png",
+          "food_category": "Italian",
+          "quantity": 30,
+          "price": 699,
+          "made_by": "Langa Jee",
+          "food_origin": "Italy",
+          "description": "Layered lasagna with meat sauce, cheese, and pasta."
+        },
+        {
+          "food_name": "Sushi Rolls",
+          "food_image": "https://i.ibb.co/YbPhs3b/sushi-roll.png",
+          "food_category": "Japanese",
+          "quantity": 58,
+          "price": 199,
+          "made_by": "Young Lee",
+          "food_origin": "Japan",
+          "description": "Assorted sushi rolls with fresh fish and avocado."
+        },
+        {
+          "food_name": "Chicken Tikka Masala",
+          "food_image": "https://i.ibb.co/7Snsbdq/tikka.png",
+          "food_category": "Indian",
+          "quantity": 54,
+          "price": 1499,
+          "made_by": "Young Lee",
+          "food_origin": "India",
+          "description": "Creamy chicken tikka masala with naan bread and rice."
+        },
+        {
+          "food_name": "Pho",
+          "food_image": "https://i.ibb.co/s2Yv5MJ/pho.png",
+          "food_category": "Vietnamese",
+          "quantity": 36,
+          "price": 999,
+          "made_by": "Young Lee",
+          "food_origin": "Vietnam",
+          "description": "Flavorful pho soup with rice noodles, beef, and herbs."
+        },
+        {
+          "food_name": "Pancakes",
+          "food_image": "https://i.ibb.co/kg01BX9/pancaka.png",
+          "food_category": "Breakfast",
+          "quantity": 54,
+          "price": 799,
+          "made_by": "Sam Jee",
+          "food_origin": "Various",
+          "description": "Fluffy pancakes with maple syrup and butter."
+        },
+        {
+          "food_name": "Fried Chicken",
+          "food_image": "https://i.ibb.co/VWDL7qC/fried.png",
+          "food_category": "American",
+          "quantity": 55,
+          "price": 899,
+          "made_by": "Sam Jee",
+          "food_origin": "USA",
+          "description": "Crispy fried chicken with a side of coleslaw."
+        },
+        {
+          "food_name": "Mango Sticky Rice",
+          "food_image": "https://i.ibb.co/smcWV9B/rice.png",
+          "food_category": "Thai",
+          "quantity": 52,
+          "price": 999,
+          "made_by": "Sam Jee",
+          "food_origin": "Thailand",
+          "description": "Sweet mango served with sticky rice and coconut milk."
+        },
+        {
+          "food_name": "Gyros",
+          "food_image": "https://i.ibb.co/BVT4Zvs/gyros.png",
+          "food_category": "Greek",
+          "quantity": 3,
+          "price": 1199,
+          "made_by": "Sam Jee",
+          "food_origin": "Greece",
+          "description": "Grilled gyros with pita bread, tomatoes, and tzatziki sauce."
+        },
+        {
+          "food_name": "Ice Cream",
+          "food_image": "https://i.ibb.co/JH5MCXB/ice-cream.png",
+          "food_category": "Dessert",
+          "quantity": 26,
+          "price": 499,
+          "made_by": "Sam Jee",
+          "food_origin": "Various",
+          "description": "Assorted ice cream flavors with toppings and waffle cone."
+        }
+   ]
+   

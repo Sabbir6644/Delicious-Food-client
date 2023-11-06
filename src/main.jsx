@@ -21,6 +21,10 @@ import MyOrderedFood from './Components/Pages/Foods/MyOrderedFood';
 import AllFoods from './Components/Pages/AllFoods/AllFoods';
 import Blog from './Components/Pages/Blogs/Blog';
 import ErrorPage from './Components/Pages/ErrorPage/ErrorPage';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addFood",
-        element: <AddFood></AddFood>
+        element: <PrivateRoute><AddFood></AddFood></PrivateRoute>
       },
       {
         path: "/orderedFood",
@@ -70,13 +74,15 @@ const router = createBrowserRouter([
     ]
   },
 ]);
-
+const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
     <HelmetProvider>
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
     </HelmetProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

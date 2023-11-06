@@ -29,8 +29,9 @@ const Login = () => {
 
      const emailRef = useRef(null);
      const passwordRef = useRef(null);
-     const handleGoogle=()=>{
-          signInWithGoogle()
+     const handleGoogle= ()=>{
+         signInWithGoogle()
+         
           .then(()=>{
                Swal.fire({
                     position: 'center',
@@ -39,12 +40,14 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
-               navigate(location?.state? location.state : '/');
+               // navigate(location?.state? location.state : '/');
           })
           .catch((err) => {
                setAlram(err.message);
                
           })
+         
+          
           
      }
 
