@@ -73,6 +73,10 @@ const AllFoods = () => {
                     <title>Delicious food | All Foods</title>
                </Helmet>
                <div>
+               <div className="mt-2 py-4">
+                    <h2 className="text-5xl font-bold text-center font-rancho">Best Food in City</h2>
+               </div>
+
                     <div className="flex justify-end pr-2 lg:pr-8 pt-8">
                          <form onSubmit={handleSearch} className="relative">
                               <input type="text" name="input" placeholder="Search by food name" className="input input-bordered w-[300px]" />

@@ -1,38 +1,43 @@
+
+import useAxios from "../../../Hooks/useAxios";
+import { useQuery } from "@tanstack/react-query";
+import TopSellingCard from "./TopSellingCard";
 import { Link } from "react-router-dom";
 
 
 const TopSellingFood = () => {
+     const axios = useAxios();
+     // console.log(data.data);
+     const topSellingFood = async () => {
+          const res = await axios.get('/topSellingFood');
+          return res;
+     }
+     const { data, isFetching} = useQuery({
+          queryKey: ['allFoodsCount'],
+          queryFn: topSellingFood,
+     });
+     // console.log(isLoading, data?.data);
      return (
           <div>
                <div className="py-4">
                     <h2 className="text-5xl font-bold text-center font-rancho">Top Selling Food</h2>
                </div>
                <div className="my-4">
-                    {/* card start */}
-                    <div className="shadow-xl border rounded-sm max-w-lg flex">
-                    {/* text div start*/}
-                    <div className="space-y-2 w-4/6 pl-4 py-4">
-                    <h2 className=" text-2xl">Food Name</h2>
-                    <h2 className=" text-xl"> Category: </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur
-                          adipisicing elit. Quisquam, deleniti.</p>
-                          <p>Price: 100 tk</p>
-                          {/* foodDetails */}
-                          <Link to={'/foodDetails'}><button className="btn">Details</button></Link>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                         {isFetching ? (
+                              <p>Loading...</p>
+                         ) : (
+                              data.data.map((topFood, index) => (
+                                   <TopSellingCard key={index} topFood={topFood}></TopSellingCard>
+                              ))
+                         )}
                     </div>
-                    {/* text div end */}
-                    {/* image div start */}
-                    <div className="w-2/6">
-                         <div className="flex justify-center items-center h-full px-4">
-                         <img className="h-[140px] w-[140px]" src="/src/assets/images/ban1.png" alt="" />
-                         </div>
-                    </div>
-                    {/* image div end */}
-                    </div>
-                    {/* card end */}
+
+
                     <div className="flex justify-center items-center my-5">
-                         <button className="btn">See All</button>
+                         {/* /allFoods */}
+                         <Link to={'/allFoods'}><button className="btn">See All</button></Link>
                     </div>
                </div>
           </div>

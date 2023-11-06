@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AllFoodCard = ({food}) => {
      // console.log(food);
 
-const {_id,description, food_category, food_image, food_name, food_origin, price, quantity, made_by}=food;
+const {_id, food_category, food_image, food_name,  price, quantity}=food;
 
      return (
           <div className="my-4">

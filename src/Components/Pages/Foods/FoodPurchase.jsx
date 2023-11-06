@@ -7,7 +7,7 @@ import { AuthContext } from "../../Authentication/AuthProvider";
 
 const FoodPurchase = () => {
      const food = useLoaderData();
-     const {food_name, price:prc}=food;
+     const {_id,food_name, price:prc, food_image}=food;
      
     const {user}=useContext(AuthContext);
 // console.log('user', user);
@@ -52,31 +52,39 @@ const FoodPurchase = () => {
           const buyerName = e.target.buyerName? e.target.buyerName.value: '';
           const buyerEmail = e.target.buyerEmail? e.target.buyerEmail.value: '';
           const buyingDate = e.target.buyingDate? e.target.buyingDate.value: '';
+          const id = _id;
+          const purches = { foodName, quantity, buyerName, price, buyerEmail, buyingDate, id, food_image }
+          // console.log(purches);
 
-          const purches = { foodName, quantity, buyerName, price, buyerEmail, buyingDate }
-          console.log(purches);
+          fetch('http://localhost:5000/createOrder/', {
+               method: 'POST',
+               headers: {
+                    'Content-Type': 'application/json'
+               },
+               body: JSON.stringify(purches)
+          })
+               .then(res => res.json())
+               .then(data => {
+                    console.log(data)
+                    if (data.acknowledged) {
+                         Swal.fire({
+                              position: 'center',
+                              icon: 'success',
+                              title: 'Order successful',
+                              showConfirmButton: false,
+                              timer: 2500
+                         })
 
-          // fetch('https://user-management-server-4tv0wlx3x-servers-projects.vercel.app/product/', {
-          //      method: 'POST',
-          //      headers: {
-          //           'Content-Type': 'application/json'
-          //      },
-          //      body: JSON.stringify(newProduct)
-          // })
-          //      .then(res => res.json())
-          //      .then(data => {
-          //           console.log(data)
-          //           if (data.acknowledged) {
-          //                Swal.fire({
-          //                     position: 'center',
-          //                     icon: 'success',
-          //                     title: 'Product added successful',
-          //                     showConfirmButton: false,
-          //                     timer: 1500
-          //                })
-
-          //           }
-          //      })
+                    }else{
+                         Swal.fire({
+                              position: 'center',
+                              icon: 'success',
+                              title: data.error,
+                              showConfirmButton: false,
+                              timer: 1500
+                         })
+                    }
+               })
      }
 
 
