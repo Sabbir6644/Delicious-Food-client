@@ -65,7 +65,7 @@ const FoodPurchase = () => {
           })
                .then(res => res.json())
                .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     if (data.acknowledged) {
                          Swal.fire({
                               position: 'center',
@@ -78,10 +78,10 @@ const FoodPurchase = () => {
                     }else{
                          Swal.fire({
                               position: 'center',
-                              icon: 'success',
+                              icon: 'error',
                               title: data.error,
                               showConfirmButton: false,
-                              timer: 1500
+                              timer: 2500
                          })
                     }
                })

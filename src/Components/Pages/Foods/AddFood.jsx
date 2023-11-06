@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Authentication/AuthProvider";
+import Swal from "sweetalert2";
+// import useAxios from "../../../Hooks/useAxios";
 
 
 
 const AddFood = () => {
      
-
+     // const axios = useAxios();
      const {user} = useContext(AuthContext);
      const [quantity, setQuantity] = useState(1);
      const handleQuantityChange = (e) => {
@@ -21,45 +23,45 @@ const AddFood = () => {
 
 
 
-     const handleAdd = e => {
+     const handleAdd =(e) => {
           e.preventDefault();
-          const foodName = e.target.foodName ? e.target.foodName.value : '';
-          const quantity = e.target.quantity? e.target.quantity.value: '' ;
-          const userName = e.target.addedUser? e.target.addedUser.value: '';
-          const price = e.target.price? e.target.price.value: '';
-          const userEmail = e.target.userEmail? e.target.userEmail.value: '';
-          const foodOrigin = e.target.foodOrigin? e.target.foodOrigin.value: '';
-          const foodCategory = e.target.foodCategory? e.target.foodCategory.value: '';
+          const food_name = e.target.foodName ? e.target.foodName.value : '';
+          const quantity = e.target.quantity ? parseInt(e.target.quantity.value, 10) : 0;
+          const authorName = e.target.addedUser? e.target.addedUser.value: '';
+          const price = e.target.price ? parseFloat(e.target.price.value) : 0.0;
+          const author_email = e.target.userEmail? e.target.userEmail.value: '';
+          const food_origin = e.target.foodOrigin? e.target.foodOrigin.value: '';
+          const food_image = e.target.foodImage? e.target.foodImage.value: '';
+          const food_category = e.target.foodCategory? e.target.foodCategory.value: '';
           const description = e.target.description? e.target.description.value: '';
 
-          const addItem = { foodName, quantity, userName, price, userEmail, foodOrigin, foodCategory, description }
+          const addItem = { food_name, quantity, authorName, price, author_email, food_origin, food_category, description, food_image }
           console.log(addItem);
-          
 
-          // fetch('https://user-management-server-4tv0wlx3x-servers-projects.vercel.app/product/', {
-          //      method: 'POST',
-          //      headers: {
-          //           'Content-Type': 'application/json'
-          //      },
-          //      body: JSON.stringify(newProduct)
-          // })
-          //      .then(res => res.json())
-          //      .then(data => {
-          //           console.log(data)
-          //           if (data.acknowledged) {
-          //                Swal.fire({
-          //                     position: 'center',
-          //                     icon: 'success',
-          //                     title: 'Product added successful',
-          //                     showConfirmButton: false,
-          //                     timer: 1500
-          //                })
+          fetch('https://assignment-11-server-jade.vercel.app/add/food/', {
+               method: 'POST',
+               headers: {
+                    'Content-Type': 'application/json'
+               },
+               body: JSON.stringify(addItem)
+          })
+               .then(res => res.json())
+               .then(data => {
+                    console.log(data)
+                    if (data.acknowledged) {
+                         Swal.fire({
+                              position: 'center',
+                              icon: 'success',
+                              title: 'Food added successfully',
+                              showConfirmButton: false,
+                              timer: 3000
+                         })
 
-          //           }
-          //      })
-     }
+                    }
+               })
+  
 
-
+     };
      return (
           
           <div>

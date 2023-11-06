@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import useAxios from "../../../Hooks/useAxios";
 import AllFoodCard from "./AllFoodCard";
 import MyListLoader from "../Spiner/MyListLoader";
+import Swal from "sweetalert2";
 
 
 const AllFoods = () => {
@@ -30,15 +31,32 @@ const AllFoods = () => {
           }
      }, [count?.data?.count]);
 
-
+// const [inputName, setInputName]=useState()
      // Search
      const handleSearch = e => {
           e.preventDefault();
           const inputValue = e.target.input.value;
-          console.log(inputValue);
-          // Search  
+          const apiUrl = `https://assignment-11-server-jade.vercel.app/foods?food_name=${inputValue}`
+          fetch(apiUrl)
+          .then(res=>res.json())
+          .then(data=>{
+               if(data.length<1){
+                    Swal.fire({
+                         position: 'center',
+                         icon: 'error',
+                         title: `Not found ${inputValue}`,
+                         showConfirmButton: false,
+                         timer: 2500
+                       })
+               }else{
+                    setFoodCard(data)
+               }
+          })
+         
 
-     }
+     } 
+
+// search
 
      // Pagination
      const [currentPage, setCurrentPage] = useState(0)
