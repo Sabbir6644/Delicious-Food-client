@@ -2,24 +2,18 @@
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../../../public/firebase.config";
-
-
+import useAxios from "../../Hooks/useAxios";
 
 export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
-
+     const [success, setSuccess]=useState(false);
      const [loading, setLoading] = useState(true);
      const [user, setUser] = useState();
+     const axios = useAxios();
      // theme toggle
     
      // loaded created user from database
-     const [loadedProduct, setLoadedProduct] = useState();
-     useEffect(() => {
-          fetch('https://user-management-server-koayagszg-servers-projects.vercel.app/product/')
-               .then(res => res.json())
-               .then(data => setLoadedProduct(data))
-     }, [loadedProduct])
      // google login
      const googleProvider = new GoogleAuthProvider();
      const signInWithGoogle = () => {
@@ -45,17 +39,28 @@ const AuthProvider = ({ children }) => {
      useEffect(() => {
           const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
                setUser(currentUser);
+               // 
+               const userEmail = currentUser?.email || user?.email;
+               const loggedUser = { email:userEmail }
+
+               if (currentUser.email) {
+                 axios.post('https://assignment-11-server-jade.vercel.app/jwt', loggedUser, {withCredentials:true})
+                 .then(res =>{
+                   setSuccess(res.data.success);
+
+                 })
+               }
+               // 
                setLoading(false)
                
           });
           return () => {
                unSubscribe()
           }
-     }, [])
+     }, [axios,user?.email])
 
      const authInfo = {
-          user, 
-          loadedProduct, signInWithGoogle,
+          user, success, signInWithGoogle,
           logout, loading, setLoading, createUser, userLogin,
           
      }

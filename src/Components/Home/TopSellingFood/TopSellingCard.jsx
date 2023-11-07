@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 
 const TopSellingCard = ({topFood}) => {
-     console.log(topFood);
      // description
 const {_id,food_category, food_image, food_name, description, price}=topFood;
 

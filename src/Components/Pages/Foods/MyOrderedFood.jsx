@@ -32,7 +32,8 @@ const MyOrderedFood = () => {
           }).then((result) => {
                if (result.isConfirmed) {
                     fetch(`https://assignment-11-server-jade.vercel.app/order/${id}`, {
-                         method: 'DELETE'
+                         method: 'DELETE',
+                         credentials: 'include'
                     })
                          .then(res => res.json())
                          .then(data => {

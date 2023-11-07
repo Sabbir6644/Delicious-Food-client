@@ -1,12 +1,11 @@
 import { useContext, useRef, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 
 import Swal from "sweetalert2";
 // import auth from "../../public/firebase.config";
 import { AuthContext } from "./AuthProvider";
-import auth from "../../../public/firebase.config";
 import { Helmet } from "react-helmet-async";
 
 
@@ -39,17 +38,16 @@ const Registration = () => {
           const imageUrl = e.target.imageUrl.value;
           const password = e.target.password.value;
           const accept = e.target.terms.checked;
+          const user = {name, email, imageUrl, password};
           // console.log(accept, name, email, password);
           if (!accept) {
-               return alert('Please accept our terms & condition ')
+               return setAlram('Please accept our terms & condition ')
           } else if (password.length < 6) {
-               return alert('pass must more then 6 ')
+               return setAlram('pass must more then 6 ')
           } else if (!isStrongPassword(password)) {
-               return alert('Password must contain at least one capital letter and one number.');
+               return setAlram('Password must contain at least one capital letter and one number.');
           } else {
              
-               createUserWithEmailAndPassword(auth, email, password)
-
                createUser(email, password)
                     .then((result) => {
 
@@ -60,13 +58,37 @@ const Registration = () => {
                          }).then( Swal.fire({
                               position: 'center',
                               icon: 'success',
-                              title: 'Sign up Successful!',
+                              title: 'Registration Successful!',
                               showConfirmButton: false,
                               timer: 1500
-                            }))
+                            }) 
+                            )
                               .catch(error => console.error(error))
 
                     })
+// 
+
+fetch('https://assignment-11-server-jade.vercel.app/regigter/', {
+               method: 'POST',
+               headers: {
+                    'Content-Type': 'application/json'
+               },
+               body: JSON.stringify(user)
+          })
+               .then(res => res.json())
+               .then(data => {
+                    console.log(data)
+                    // if (data.acknowledged) {
+                    //      Swal.fire({
+                    //           position: 'center',
+                    //           icon: 'success',
+                    //           title: 'Food added successfully',
+                    //           showConfirmButton: false,
+                    //           timer: 3000
+                    //      })
+
+                    // }
+               })
                     .catch(() => {
                          setAlram('Already you have an account please try to login')
                     })

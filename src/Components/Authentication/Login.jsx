@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
+     const {success}=useContext(AuthContext)
      const navigate = useNavigate();
      const location = useLocation();
      const { userLogin, signInWithGoogle } = useContext(AuthContext);
@@ -40,7 +41,11 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
-               // navigate(location?.state? location.state : '/');
+                  if (success) {
+                    navigate(location?.state? location.state : '/');
+                  }
+                  
+               
           })
           .catch((err) => {
                setAlram(err.message);
@@ -74,7 +79,9 @@ const Login = () => {
                               timer: 1500
                             })
                          
-                         navigate(location?.state? location.state : '/');
+                            if (success) {
+                              navigate(location?.state? location.state : '/');
+                            }
 
 
                          emailRef.current.value = '';
