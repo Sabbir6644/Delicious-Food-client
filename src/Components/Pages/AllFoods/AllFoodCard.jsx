@@ -18,14 +18,9 @@ const {_id, food_category, food_image, food_name,  price, quantity}=food;
                     <h2 className=" text-lg"> Category: {food_category}</h2>
                     <h2 className=" text-lg">Price: {price}</h2>
                     <h2 className=" text-lg">Quantity: {quantity}</h2>
-                    {/* <h2 className=" text-lg">Made By: {made_by}</h2>
-                    <h2 className=" text-lg"> Food Origin (Country): {food_origin}</h2>
-                    <div className="flex-grow">
-                    <p>{description}.</p>
-                    </div> */}
                           
                           {/* foodPurchase */}
-                          <Link to={`/foodDetails/${_id}`}><button className="btn">Details</button></Link>
+                          <Link to={`/foodDetails/${_id}`}><button className="btn text-red-900">Details</button></Link>
                           
                          
 

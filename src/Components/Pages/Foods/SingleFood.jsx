@@ -11,7 +11,7 @@ const SingleFood = () => {
                     <title>Delicious Food | Food Details</title>
                </Helmet>
                <div className="py-4">
-                    <h2 className="text-5xl font-bold text-center font-rancho">Details of {food_name}</h2>
+                    <h2 className="text-5xl font-bold text-red-900 text-center font-rancho">Details of {food_name}</h2>
                </div>
                <div className="my-4">
                     {/* card start */}
@@ -26,7 +26,7 @@ const SingleFood = () => {
                     <p>{description}</p>
                           
                           {/* foodPurchase */}
-                          <Link to={`/foodPurchase/${_id}`}><button className="btn">Order</button></Link>
+                          <Link to={`/foodPurchase/${_id}`}><button className="btn text-red-900">Order</button></Link>
                           
                          
 

@@ -93,13 +93,13 @@ const AllFoods = () => {
                </Helmet>
                <div>
                <div className="mt-2 py-4">
-                    <h2 className="text-5xl font-bold text-center font-rancho">Best Food in City</h2>
+                    <h2 className="text-5xl font-bold text-center font-rancho text-red-900">Best Food in City</h2>
                </div>
 
                     <div className="flex justify-end pr-2 lg:pr-8 pt-8">
                          <form onSubmit={handleSearch} className="relative">
                               <input type="text" name="input" placeholder="Search by food name" className="input input-bordered w-[300px]" />
-                              <input type="submit" value={'Search'} className="btn btn-active absolute right-0" />
+                              <input type="submit" value={'Search'} className="btn btn-active text-red-900 absolute right-0" />
 
                          </form>
                     </div>
@@ -124,7 +124,7 @@ const AllFoods = () => {
                </div>
 
                <div className='flex justify-center gap-2 my-2'>
-                    <button className="bg-gray-100 py-2 px-4 rounded-md" onClick={handlePrev}>Prev</button>
+                    <button className="bg-gray-100 py-2 px-4 text-red-900 rounded-md" onClick={handlePrev}>Prev</button>
                     {
                          pages?.map((page, index) => <button
 
@@ -138,7 +138,7 @@ const AllFoods = () => {
                               {page+1}</button>)
                     }
 
-                    <button className="bg-gray-100 py-2 px-4 rounded-md" onClick={handleNext}>Next</button>
+                    <button className="bg-gray-100 text-red-900 py-2 px-4 rounded-md" onClick={handleNext}>Next</button>
 
                </div>
           </div>

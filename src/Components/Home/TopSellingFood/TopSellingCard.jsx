@@ -16,7 +16,7 @@ const {_id,food_category, food_image, food_name, description, price}=topFood;
                     <p>{description}</p>
                           <p>Price: {price} tk</p>
                           {/* foodDetails */}
-                          <Link to={`/foodDetails/${_id}`}><button className="btn">Details</button></Link>
+                          <Link to={`/foodDetails/${_id}`}><button className="btn text-red-900">Details</button></Link>
 
                     </div>
                     {/* text div end */}

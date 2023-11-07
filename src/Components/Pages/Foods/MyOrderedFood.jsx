@@ -20,7 +20,7 @@ const MyOrderedFood = () => {
           queryFn: orderDetails,
      });
      const handleDelete = (id) => {
-          console.log(id);
+          // console.log(id);
           Swal.fire({
                title: "Are you sure?",
                text: "You want to cancel this!",
@@ -79,7 +79,7 @@ const MyOrderedFood = () => {
                               ) : (
                                    <div>
                                         <div className="mt-2 py-4">
-                                             <h2 className="text-5xl font-bold text-center font-rancho">Order details</h2>
+                                             <h2 className="text-5xl font-bold text-center text-red-900 font-rancho">Order details</h2>
                                         </div>
                                         <table className="table">
                                              {/* head */}

@@ -21,7 +21,7 @@ const TopSellingFood = () => {
      return (
           <div>
                <div className="py-4">
-                    <h2 className="text-5xl font-bold text-center font-rancho">Top Selling Food</h2>
+                    <h2 className="text-5xl font-bold text-center font-rancho text-red-900">Top Selling Food</h2>
                </div>
                <div className="my-4">
 
@@ -48,7 +48,7 @@ const TopSellingFood = () => {
 
                     <div className="flex justify-center items-center my-5">
                          {/* /allFoods */}
-                         <Link to={'/allFoods'}><button className="btn">See All</button></Link>
+                         <Link to={'/allFoods'}><button className="btn text-red-900">See All</button></Link>
                     </div>
                </div>
           </div>

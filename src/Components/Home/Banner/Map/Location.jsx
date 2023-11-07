@@ -14,7 +14,7 @@ const Location = () => {
                     <div className="w-full lg:w-1/2">
                          {/* location */}
                          <div className="py-2">
-                              <h2 className="text-3xl font-bold text-center font-rancho">Location & Hours</h2>
+                              <h2 className="text-3xl font-bold text-red-900 text-center font-rancho">Location & Hours</h2>
                          </div>
                          <div className="md:flex gap-5">
 

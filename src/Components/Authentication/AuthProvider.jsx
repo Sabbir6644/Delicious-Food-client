@@ -49,7 +49,12 @@ const AuthProvider = ({ children }) => {
                    setSuccess(res.data.success);
 
                  })
-               }
+               }else{
+                    axios.post('https://assignment-11-server-jade.vercel.app/logout', loggedUser, {withCredentials:true})
+                    .then(res =>{
+                      console.log(res.data);
+                    })
+                  }
                // 
                setLoading(false)
                

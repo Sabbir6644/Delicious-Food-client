@@ -46,7 +46,7 @@ const MyAddedFood = () => {
                               ) : (
                                    <div>
                                         <div className="mt-2 py-4">
-                                             <h2 className="text-5xl font-bold text-center font-rancho">Your Added Food</h2>
+                                             <h2 className="text-5xl font-bold text-center font-rancho text-red-900">Your Added Food</h2>
                                         </div>
                                         <table className="table">
                                              {/* head */}
