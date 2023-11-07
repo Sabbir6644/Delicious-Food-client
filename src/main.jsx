@@ -25,6 +25,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import UpdateFood from './Components/Pages/Foods/UpdateFood';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,15 +60,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/myAddedFood",
-        element: <MyAddedFood></MyAddedFood>
+        element: <PrivateRoute><MyAddedFood></MyAddedFood></PrivateRoute>
       },
       {
         path: "/addFood",
         element: <PrivateRoute><AddFood></AddFood></PrivateRoute>
       },
       {
+        path: "/updateFood/:id",
+        element: <PrivateRoute><UpdateFood></UpdateFood></PrivateRoute>,
+        loader: ({params})=> fetch(`https://assignment-11-server-jade.vercel.app/singleFood/${params.id}`),
+      },
+      {
         path: "/orderedFood",
-        element: <MyOrderedFood></MyOrderedFood>
+        element: <PrivateRoute><MyOrderedFood></MyOrderedFood></PrivateRoute>
       },
       {
         path: "/blog",

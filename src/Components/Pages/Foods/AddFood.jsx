@@ -27,7 +27,7 @@ const AddFood = () => {
           e.preventDefault();
           const food_name = e.target.foodName ? e.target.foodName.value : '';
           const quantity = e.target.quantity ? parseInt(e.target.quantity.value, 10) : 0;
-          const authorName = e.target.addedUser? e.target.addedUser.value: '';
+          const made_by = e.target.addedUser? e.target.addedUser.value: '';
           const price = e.target.price ? parseFloat(e.target.price.value) : 0.0;
           const author_email = e.target.userEmail? e.target.userEmail.value: '';
           const food_origin = e.target.foodOrigin? e.target.foodOrigin.value: '';
@@ -35,7 +35,7 @@ const AddFood = () => {
           const food_category = e.target.foodCategory? e.target.foodCategory.value: '';
           const description = e.target.description? e.target.description.value: '';
 
-          const addItem = { food_name, quantity, authorName, price, author_email, food_origin, food_category, description, food_image }
+          const addItem = { food_name, quantity, made_by, price, author_email, food_origin, food_category, description, food_image }
           console.log(addItem);
 
           fetch('https://assignment-11-server-jade.vercel.app/add/food/', {
