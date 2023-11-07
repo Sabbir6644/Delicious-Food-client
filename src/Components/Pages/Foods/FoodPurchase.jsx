@@ -56,7 +56,7 @@ const FoodPurchase = () => {
           const purches = { foodName, quantity, buyerName, price, buyerEmail, buyingDate, id, food_image }
           // console.log(purches);
 
-          fetch('http://localhost:5000/createOrder/', {
+          fetch('https://assignment-11-server-jade.vercel.app/createOrder/', {
                method: 'POST',
                headers: {
                     'Content-Type': 'application/json'
@@ -65,8 +65,8 @@ const FoodPurchase = () => {
           })
                .then(res => res.json())
                .then(data => {
-                    // console.log(data)
-                    if (data.acknowledged) {
+                    console.log(data)
+                    if (data.message ==='Order created successfully') {
                          Swal.fire({
                               position: 'center',
                               icon: 'success',

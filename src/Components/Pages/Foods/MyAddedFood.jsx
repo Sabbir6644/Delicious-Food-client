@@ -27,7 +27,7 @@ const MyAddedFood = () => {
                <Helmet>
                     <title>Delicious food | My added food</title>
                </Helmet>
-               <h2>my added food</h2>
+
                <div>
 
                     {
@@ -37,9 +37,17 @@ const MyAddedFood = () => {
                               </div>
                          ) : (
                               data?.data.length < 1 ? (
-                                   <p>You have no added any food</p>
+                                   <div className="flex justify-center items-center min-h-screen">
+                                        <img src="https://i.ibb.co/HKnfZjp/empty.png" alt="" />
+                                        <p className="text-5xl font-bold text-center font-rancho">You have no added any food</p>
+                                   </div>
+
+                                   
                               ) : (
                                    <div>
+                                        <div className="mt-2 py-4">
+                                             <h2 className="text-5xl font-bold text-center font-rancho">Your Added Food</h2>
+                                        </div>
                                         <table className="table">
                                              {/* head */}
                                              <thead>
