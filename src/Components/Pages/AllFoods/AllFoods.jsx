@@ -37,7 +37,8 @@ const AllFoods = () => {
      const handleSearch = e => {
           e.preventDefault();
           const inputValue = e.target.input.value;
-          const apiUrl = `https://assignment-11-server-jade.vercel.app/foods?food_name=${inputValue}`
+          // const apiUrl = `https://assignment-11-server-jade.vercel.app/foods?food_name=${inputValue}`
+          const apiUrl = `https://assignment-11-server-jade.vercel.app/search?food_name=${inputValue}`
           fetch(apiUrl)
           .then(res=>res.json())
           .then(data=>{
