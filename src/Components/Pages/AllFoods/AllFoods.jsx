@@ -99,7 +99,7 @@ const AllFoods = () => {
 
                     <div className="flex justify-end pr-2 lg:pr-8 pt-8">
                          <form onSubmit={handleSearch} className="relative">
-                              <input type="text" name="input" placeholder="Search by food name" className="input input-bordered w-[300px]" />
+                              <input type="text" name="input" placeholder="Search by food name" required className="input input-bordered w-[300px]" />
                               <input type="submit" value={'Search'} className="btn btn-active text-red-900 absolute right-0" />
 
                          </form>

@@ -101,13 +101,17 @@ fetch('https://assignment-11-server-jade.vercel.app/regigter/', {
 
      }
      return (
-          <div className="flex mx-auto min-h-screen items-center">
+          <div className="flex flex-col md:flex-row mx-auto min-h-screen max-w-4xl items-center">
                <Helmet>
                     <title>Delicious food | Registration</title>
                </Helmet>
+               <div>
+               <h2 className="text-center block md:hidden text-5xl font-bold font-rancho text-red-900 mb-9">Please Registration </h2>
+                    <img src="https://i.ibb.co/9p3BtNr/registration.png" alt="" />
+               </div>
                <div className=" w-11/12 md:w-[500px] mx-auto">
                     <div>
-                    <h2 className="text-center text-5xl font-bold font-rancho text-red-900 mb-9">Please Registration </h2>
+                    <h2 className="text-center hidden md:block text-5xl font-bold font-rancho text-red-900 mb-9">Please Registration </h2>
                          <form onSubmit={handleSubmit}>
                               <input ref={nameRef} className="border p-2 w-full mb-4" type="text" name="name" placeholder="Name..." required />
                               <input ref={emailRef} className="border p-2 w-full mb-4" type="email" name="email" placeholder="Email..." required />
