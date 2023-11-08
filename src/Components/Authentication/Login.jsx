@@ -41,8 +41,9 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
+                  console.log(location.state);
                   if (success) {
-                    navigate(location?.state? location.state : '/');
+                    navigate(location?.state? location.state.from : '/');
                   }
                   
                
@@ -80,7 +81,7 @@ const Login = () => {
                             })
                          
                             if (success) {
-                              navigate(location?.state? location.state : '/');
+                              navigate(location?.state? location.state.from : '/');
                             }
 
 

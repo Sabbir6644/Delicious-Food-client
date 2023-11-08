@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/foodDetails/:id",
-        element: <PrivateRoute><SingleFood></SingleFood></PrivateRoute>,
+        element:<SingleFood></SingleFood>,
         loader: ({params})=> fetch(`https://assignment-11-server-jade.vercel.app/singleFood/${params.id}`),
       },
       {

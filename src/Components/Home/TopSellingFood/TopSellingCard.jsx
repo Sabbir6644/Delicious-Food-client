@@ -23,7 +23,7 @@ const {_id,food_category, food_image, food_name, description, price}=topFood;
                     {/* image div start */}
                     <div className="w-2/6">
                          <div className="flex justify-center items-center h-full px-4">
-                         <img className="h-[140px] w-[140px]" src={food_image} alt="" />
+                         <img className="h-[130px] w-[140px]" src={food_image} alt="" />
                          </div>
                     </div>
                     {/* image div end */}

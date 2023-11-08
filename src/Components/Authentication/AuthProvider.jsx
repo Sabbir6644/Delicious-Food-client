@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
                const userEmail = currentUser?.email || user?.email;
                const loggedUser = { email:userEmail }
 
-               if (currentUser.email) {
+               if (currentUser?.email) {
                  axios.post('https://assignment-11-server-jade.vercel.app/jwt', loggedUser, {withCredentials:true})
                  .then(res =>{
                    setSuccess(res.data.success);

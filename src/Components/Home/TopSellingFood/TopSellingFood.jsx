@@ -21,7 +21,7 @@ const TopSellingFood = () => {
      return (
           <div>
                <div className="py-4">
-                    <h2 className="text-5xl font-bold text-center font-rancho text-red-900">Top Selling Food</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-center font-rancho text-red-900">Top Selling Food</h2>
                </div>
                <div className="my-4">
 

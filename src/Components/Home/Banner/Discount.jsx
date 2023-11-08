@@ -6,7 +6,7 @@ const Discount = () => {
                
                <div className="flex-1 flex justify-center items-center">
                
-               <div className=" text-center text-7xl font-rancho font-extrabold ">
+               <div className=" text-center py-4 text-5xl md:text-7xl font-rancho font-extrabold ">
                <h2><span className="text-red-900">10%</span> off </h2>
                <p>on every <span className="text-red-900">Friday</span></p>
                </div>
@@ -17,7 +17,7 @@ const Discount = () => {
                </div>
                
                <div className="flex-1">
-               <img className="w-full max-h-[400px]" src="https://i.ibb.co/Xpxxv6t/burger.png" alt="" />
+               <img className="w-full max-h-[300] md:max-h-[400px]" src="https://i.ibb.co/Xpxxv6t/burger.png" alt="" />
                </div>
           </div>
      );
