@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Authentication/AuthProvider";
 import Swal from "sweetalert2";
+import Animation from "../../../Hooks/Animation";
 // import useAxios from "../../../Hooks/useAxios";
 
 
@@ -71,7 +72,7 @@ const AddFood = () => {
                <div className="max-w-3xl mx-auto min-h-screen items-center flex justify-center ">
                     <div className="py-5">
                          <div className="text-center">
-                              <h2 className="text-5xl font-bold text-center font-rancho text-red-900">Add Food Item</h2>
+                              <Animation><h2 className="text-5xl font-bold text-center font-rancho text-red-900">Add Food Item</h2></Animation>
 
                          </div>
                          <form onSubmit={handleAdd} className="max-w-[665px] mx-auto my-5">
@@ -117,12 +118,12 @@ const AddFood = () => {
                               <div className="flex gap-5">
                                    <div className="form-control w-full max-w-xs">
                                         <label className="label">
-                                             <span className="label-text">Price</span>
+                                             <span className="label-text">Unit Price (Tk)</span>
                                         </label>
                                         <input
                                              type="number"
                                             
-                                             placeholder="100" // This placeholder value is updated in real-time
+                                             placeholder="100" 
                                              name="price"
                                              className="rounded-md p-2 border w-full max-w-xs"
                                         />

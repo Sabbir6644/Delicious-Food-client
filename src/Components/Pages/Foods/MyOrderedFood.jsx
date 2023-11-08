@@ -6,6 +6,7 @@ import { AuthContext } from "../../Authentication/AuthProvider";
 import MyListLoader from "../Spiner/MyListLoader";
 import OrderDetails from "./OrderDetails";
 import Swal from "sweetalert2";
+import Animation from "../../../Hooks/Animation";
 
 
 const MyOrderedFood = () => {
@@ -79,7 +80,7 @@ const MyOrderedFood = () => {
                               ) : (
                                    <div>
                                         <div className="mt-2 py-4">
-                                             <h2 className="text-5xl font-bold text-center text-red-900 font-rancho">Order details</h2>
+                                             <Animation><h2 className="text-5xl font-bold text-center text-red-900 font-rancho">Order details</h2></Animation>
                                         </div>
                                         <table className="table">
                                              {/* head */}

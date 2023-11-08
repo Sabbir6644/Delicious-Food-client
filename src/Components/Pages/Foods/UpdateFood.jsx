@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Authentication/AuthProvider";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
+import Animation from "../../../Hooks/Animation";
 
 const UpdateFood = () => {
      const data = useLoaderData();
@@ -69,7 +70,7 @@ const UpdateFood = () => {
           <div className="max-w-3xl mx-auto min-h-screen items-center flex justify-center ">
                <div className="py-5">
                     <div className="text-center">
-                         <h2 className="text-5xl font-bold text-red-900 text-center font-rancho">Update Your Added Food Item</h2>
+                         <Animation><h2 className="text-5xl font-bold text-red-900 text-center font-rancho">Update Your Added Food Item</h2></Animation>
 
                     </div>
                     <form onSubmit={handleUpdate} className="max-w-[665px] mx-auto my-5">

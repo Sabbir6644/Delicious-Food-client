@@ -1,13 +1,14 @@
+import Animation from "../../../Hooks/Animation";
 
 
 
 const OneWayData = () => {
 
      return (
-          <div className="">
+          <div>
           <header className="bg-red-900 py-4">
             <div className="container mx-auto text-center text-white">
-              <h1 className="text-4xl font-extrabold">Exploring One-Way Data Binding</h1>
+              <Animation><h1 className="text-4xl font-extrabold">Exploring One-Way Data Binding</h1></Animation>
             </div>
           </header>
           <main className="container mx-auto p-6 mt-6 bg-white rounded-lg shadow-lg">

@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import TopSellingCard from "./TopSellingCard";
 import { Link } from "react-router-dom";
 import MyListLoader from "../../Pages/Spiner/MyListLoader";
+import Animation from '../../../Hooks/Animation';
 
 
 const TopSellingFood = () => {
@@ -21,29 +22,30 @@ const TopSellingFood = () => {
      return (
           <div>
                <div className="py-4">
-                    <h2 className="text-3xl md:text-5xl font-bold text-center font-rancho text-red-900">Top Selling Food</h2>
+
+                    <Animation><h2 className="text-3xl md:text-5xl font-bold text-center font-rancho text-red-900">Top Selling Food</h2></Animation>
                </div>
                <div className="my-4">
 
-                    
-                         {isFetching ? (
-                              <div className='flex justify-center'>
-                                   <MyListLoader></MyListLoader>
-                              </div>
+
+                    {isFetching ? (
+                         <div className='flex justify-center'>
+                              <MyListLoader></MyListLoader>
+                         </div>
 
 
-                         ) : ( 
+                    ) : (
                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                         
+
                               {
                                    data.data.map((topFood, index) => (
                                         <TopSellingCard key={index} topFood={topFood}></TopSellingCard>
                                    ))
                               }
-                         
+
                          </div>
-                        ) }
-                    
+                    )}
+
 
 
                     <div className="flex justify-center items-center my-5">

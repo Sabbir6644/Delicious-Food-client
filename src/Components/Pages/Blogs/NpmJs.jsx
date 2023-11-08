@@ -2,7 +2,7 @@
 
 const NpmJs = () => {
      return (
-          <div className="bg-gray-100 ">
+          <div>
       <header className="bg-red-900 py-4">
         <div className="container mx-auto text-center text-white">
           <h1 className="text-4xl font-extrabold">Understanding NPM in Node.js</h1>

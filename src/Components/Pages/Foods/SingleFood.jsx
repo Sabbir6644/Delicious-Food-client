@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
+import Animation from "../../../Hooks/Animation";
 
 
 const SingleFood = () => {
@@ -11,7 +12,7 @@ const SingleFood = () => {
                     <title>Delicious Food | Food Details</title>
                </Helmet>
                <div className="py-4">
-                    <h2 className="text-5xl font-bold text-red-900 text-center font-rancho">Details of {food_name}</h2>
+                    <Animation><h2 className="text-5xl font-bold text-red-900 text-center font-rancho">Details of {food_name}</h2></Animation>
                </div>
                <div className="my-4">
                     {/* card start */}

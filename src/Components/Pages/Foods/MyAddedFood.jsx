@@ -5,6 +5,7 @@ import useAxios from "../../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import AddFoodsTable from "./AddFoodsTable";
 import MyListLoader from "../Spiner/MyListLoader";
+import Animation from "../../../Hooks/Animation";
 
 
 
@@ -39,14 +40,14 @@ const MyAddedFood = () => {
                               data?.data.length < 1 ? (
                                    <div className="flex justify-center items-center min-h-screen">
                                         <img src="https://i.ibb.co/HKnfZjp/empty.png" alt="" />
-                                        <p className="text-5xl font-bold text-center font-rancho">You have no added any food</p>
+                                        <Animation><p className="text-5xl font-bold text-center font-rancho">You have no added any food</p></Animation>
                                    </div>
 
                                    
                               ) : (
                                    <div>
                                         <div className="mt-2 py-4">
-                                             <h2 className="text-5xl font-bold text-center font-rancho text-red-900">Your Added Food</h2>
+                                             <Animation><h2 className="text-5xl font-bold text-center font-rancho text-red-900">Your Added Food</h2></Animation>
                                         </div>
                                         <table className="table">
                                              {/* head */}

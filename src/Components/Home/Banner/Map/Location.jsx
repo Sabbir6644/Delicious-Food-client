@@ -24,7 +24,7 @@ const Location = () => {
                                   <p>12 ATATURK AVE</p>
                                    <p>BANANI, DHAKA 1213</p>
                                    <p>Tel: +(021)846-2513</p>
-                                   <p>Email: deleciousfood@gmail.com</p>
+                                   <p>Email: deliciousfood@gmail.com</p>
                                   </div>
                                   
                               </div>

@@ -5,6 +5,7 @@ import useAxios from "../../../Hooks/useAxios";
 import AllFoodCard from "./AllFoodCard";
 import MyListLoader from "../Spiner/MyListLoader";
 import Swal from "sweetalert2";
+import Animation from "../../../Hooks/Animation";
 
 
 const AllFoods = () => {
@@ -93,7 +94,7 @@ const AllFoods = () => {
                </Helmet>
                <div>
                <div className="mt-2 py-4">
-                    <h2 className="text-5xl font-bold text-center font-rancho text-red-900">Best Food in City</h2>
+                    <Animation><h2 className="text-5xl font-bold text-center font-rancho text-red-900">Best Food in City</h2></Animation>
                </div>
 
                     <div className="flex justify-end pr-2 lg:pr-8 pt-8">

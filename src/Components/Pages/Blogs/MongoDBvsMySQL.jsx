@@ -1,13 +1,15 @@
 
 
+
 const MongoDBvsMySQL = () => {
      return (
-          <div className="bg-gray-100">
+          <div>
           <header className="bg-red-900 py-4">
             <div className="container mx-auto text-center text-white">
               <h1 className="text-4xl font-extrabold">MongoDB vs MySQL: A Comparative Analysis</h1>
             </div>
           </header>
+
           <main className="container mx-auto p-6 mt-6 bg-white rounded-lg shadow-lg">
             <article className="prose mx-auto">
               <p className="text-gray-600">
