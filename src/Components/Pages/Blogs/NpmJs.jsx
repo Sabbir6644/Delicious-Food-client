@@ -56,7 +56,7 @@ const NpmJs = () => {
             $ npm install package-name
           </pre>
           <p className="text-gray-600">
-            The package and its dependencies will be downloaded and added to your project. You can also specify the <code className="bg-gray-100 p-1 rounded text-gray-700">--save</code> flag to update your package.json file with the package's information.
+            The package and its dependencies will be downloaded and added to your project. You can also specify the <code className="bg-gray-100 p-1 rounded text-gray-700">--save</code> flag to update your package.json file with the packages information.
           </p>
           <h2 className="text-2xl font-semibold text-gray-800 mt-4">Conclusion</h2>
           <p className="text-gray-600">

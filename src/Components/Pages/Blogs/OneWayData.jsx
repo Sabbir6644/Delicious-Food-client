@@ -28,7 +28,7 @@ const OneWayData = () => {
                   One-way data binding is particularly useful in scenarios where you want to display data to the user but do not want the user to directly modify the original data. Some common use cases include:
                 </p>
                 <ul className="list-disc pl-4 text-gray-600">
-                  <li>Displaying static content that doesn't require user edits.</li>
+                  <li>Displaying static content that does not require user edits.</li>
                   <li>Data visualization, such as charts and graphs.</li>
                   <li>Presenting search results without allowing direct data modification.</li>
                 </ul>

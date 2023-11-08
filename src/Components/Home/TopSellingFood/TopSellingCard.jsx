@@ -11,7 +11,7 @@ const {_id,food_category, food_image, food_name, description, price}=topFood;
           <div className="shadow-xl border rounded-sm max-w-lg flex">
                     {/* text div start*/}
                     <div className="space-y-2 w-4/6 pl-4 py-4">
-                    <h2 className=" text-2xl">Food Name: {food_name}</h2>
+                    <h2 className=" text-2xl text-red-900">{food_name}</h2>
                     <h2 className=" text-xl"> Category: {food_category}</h2>
                     <p>{description}</p>
                           <p>Price: {price} tk</p>

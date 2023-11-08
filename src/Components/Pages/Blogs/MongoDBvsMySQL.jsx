@@ -14,7 +14,7 @@ const MongoDBvsMySQL = () => {
                 Databases are at the core of every application, serving as the foundation for data storage and retrieval. In the world of databases, two names frequently come up: MongoDB and MySQL.
               </p>
               <p className="text-gray-600">
-                While both are database management systems, MongoDB and MySQL have distinct differences, making each more suitable for specific use cases. In this article, we'll delve into these differences.
+                While both are database management systems, MongoDB and MySQL have distinct differences, making each more suitable for specific use cases. In this article, we will delve into these differences.
               </p>
               <h2 className="text-2xl font-semibold text-gray-800 mt-4">Data Model</h2>
               <p className="text-gray-600">
@@ -39,7 +39,7 @@ const MongoDBvsMySQL = () => {
               </p>
               <h2 className="text-2xl font-semibold text-gray-800 mt-4">Use Cases</h2>
               <p className="text-gray-600">
-                MySQL is often chosen for applications that require strong data consistency, such as financial applications and applications that rely on complex transactions. It's also well-suited for relational data.
+                MySQL is often chosen for applications that require strong data consistency, such as financial applications and applications that rely on complex transactions. Its also well-suited for relational data.
               </p>
               <p className="text-gray-600">
                 MongoDB is preferred for projects that deal with unstructured or semi-structured data, such as content management systems, real-time analytics, and projects with evolving requirements.

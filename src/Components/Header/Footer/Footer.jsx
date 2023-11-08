@@ -4,9 +4,9 @@ const Footer = () => {
           <div className="bg-base-300 ">
 
 <footer className=" pt-10 px-10 max-w-7xl mx-auto text-base-content">
-      <div className="flex justify-around">
+      <div className="flex flex-col md:flex-row flex-wrap justify-around">
 <div className="flex gap-3">
-  <img className="h-[120px] w-[120px] -mt-[30px]" src="/src/assets/images/resLogo.png" alt="" />
+  <img className="h-[120px] w-[120px] -mt-[30px]" src="https://i.ibb.co/k85tfdM/resLogo.png" alt="" />
   <div>
 <p className="footer-title">Delicious Food</p>
 <p>Providing best food since 1992</p>
