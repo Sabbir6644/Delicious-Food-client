@@ -37,7 +37,7 @@ const UpdateFood = () => {
           const updateItem = { food_name, quantity, authorName, price, author_email, food_origin, food_category, description, food_image }
           console.log(updateItem);
 
-          fetch(`http://localhost:5000/food/${_id}`, {
+          fetch(`https://assignment-11-server-jade.vercel.app/food/${_id}`, {
                method: 'PUT',
                headers: {
                     'Content-Type': 'application/json'

@@ -86,7 +86,7 @@ const MyOrderedFood = () => {
                                              {/* head */}
                                              <thead>
                                                   <tr className="text-lg">
-                                                       <th>Sl No.</th>
+                                                       
                                                        <th>Image</th>
                                                        <th>Food Name</th>
                                                        <th>Quantity</th>

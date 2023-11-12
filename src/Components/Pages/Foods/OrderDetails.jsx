@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 
-const OrderDetails = ({ food, index , handleDelete}) => {
+const OrderDetails = ({ food, handleDelete}) => {
 
      // console.log(food);
 
@@ -15,7 +15,7 @@ const OrderDetails = ({ food, index , handleDelete}) => {
 
      return (
           <tr>
-               <th>{index + 1}</th>
+               
                <td><img className="h-12 w-12" src={food?.food_image} alt="" /></td>
                <td>{food.foodName}</td>
                <td>{food.quantity}</td>
